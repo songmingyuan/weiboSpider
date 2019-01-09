@@ -744,6 +744,7 @@ public class HomeWeiboPageProcessor extends BasicPageProcessor {
 			MyDataSource.destroy();
 		}
 	}
+	
 	private static void launch(String[] spiderIds) {
 		String[] newSpiderIds = new String[1];
 		String spiderId = spiderIds[0];
