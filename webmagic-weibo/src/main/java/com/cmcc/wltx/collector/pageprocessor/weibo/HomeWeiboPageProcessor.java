@@ -49,7 +49,6 @@ import com.cmcc.wltx.common.VerticalOutFileWriter;
 import com.cmcc.wltx.database.JedisUtils;
 import com.cmcc.wltx.utils.WeiBoUtils;
 
-
 public class HomeWeiboPageProcessor extends BasicPageProcessor {
 	private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(HomeWeiboPageProcessor.class);
 	private final HomeWeiboSpiderTaskService taskService = ServiceFactory.getHomeWeiboSpiderTaskService();
