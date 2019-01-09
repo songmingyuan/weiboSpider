@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<appender name="ANALYSIS_ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>log/analysis/error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/analysis/error.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="ANALYSIS_WARN"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>log/analysis/warn.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/analysis/warn.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="ANALYSIS_INFO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>log/analysis/info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/analysis/info.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.pageprocessor" level="INFO"
+		additivity="false">
+		<appender-ref ref="ANALYSIS_INFO" />
+		<appender-ref ref="ANALYSIS_WARN" />
+		<appender-ref ref="ANALYSIS_ERROR" />
+	</logger>
+
+	<appender name="STATISTICS_5"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/statistics/statistic_5.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/statistics/statistic_5.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.statistics.weibo.home.5"
+		level="INFO" additivity="false">
+		<appender-ref ref="STATISTICS_5" />
+	</logger>
+
+	<appender name="STATISTICS_4"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/statistics/statistic_4.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/statistics/statistic_4.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.statistics.weibo.home.4"
+		level="INFO" additivity="false">
+		<appender-ref ref="STATISTICS_4" />
+	</logger>
+
+	<appender name="STATISTICS_3"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/statistics/statistic_3.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/statistics/statistic_3.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.statistics.weibo.home.3"
+		level="INFO" additivity="false">
+		<appender-ref ref="STATISTICS_3" />
+	</logger>
+
+	<appender name="Header_Url"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/headerUrl/header_url.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/headerUrl/header_url.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>15</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.statistics.weibo.home.headerUrl"
+		level="INFO" additivity="false">
+		<appender-ref ref="Header_Url" />
+	</logger>
+
+	<appender name="PROCESS"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/process.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/process.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.cmcc.wltx.collector.spider.mywebmagic" level="INFO"
+		additivity="false">
+		<appender-ref ref="PROCESS" />
+	</logger>
+
+	<appender name="CRAWL"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/crawl.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/crawl.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="CRAWL" />
+	</root>
+</configuration>

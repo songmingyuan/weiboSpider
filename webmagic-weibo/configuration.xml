@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 由于一些类启动需要读取配置文件，故提交改文件 -->
+<config>
+        <site>
+                <charset>UTF-8</charset><!-- 页面编码格式 -->
+                <retrytimes>3</retrytimes>  <!-- 重试次数 -->
+                <sleeptime>500</sleeptime>  <!-- 网页间休眠时间单位毫秒 -->
+                <retrysleeptime>3000</retrysleeptime>  <!-- 请求失败时网页间休眠时间单位毫秒 -->
+                <timeout>10000</timeout>  <!-- 请求最长等待时间单位毫秒 -->
+                <timeinterval>0</timeinterval>  <!-- 轮询间隔单位毫秒 -->
+                <threadnum>1</threadnum> <!-- 线程数 -->
+                <!-- <proxy host="proxy.cmcc" port="8080" /> 代理设置 -->
+        </site>
+</config>
